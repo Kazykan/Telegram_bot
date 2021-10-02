@@ -24,7 +24,7 @@ def values(message: telebot.types.Message):
 @bot.message_handler(content_types=['text', ])
 def convert(message: telebot.types.Message):
     try:
-        values = message.text.split(' ')
+        values = message.text.lower().split(' ')  # убираем заглавные буквы
 
         if len(values) == 1:  # возможность ввода только amount
             amount = values[0]
